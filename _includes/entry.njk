@@ -1,0 +1,12 @@
+{% css %}
+@media (min-width: 768px) {
+    .entry {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+{% endcss %}
+
+<div class="entry">
+    <span>{{ blogger.data.name }}</span> <a href="https://{{ blogger.data.homepage }}">{{ blogger.data.homepage }}</a>
+</div>

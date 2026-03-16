@@ -1,0 +1,12 @@
+---
+title: Nederlandse bloggers
+description: Op nederlandsebloggers.nl vind je Nederlandse bloggers!
+layout: layouts/base.njk
+---
+<h1>Nederlandse bloggers</h1>
+
+<p class="lead">Dit is een linkpagina of webportaal met links naar Nederlandse bloggers.</p>
+
+{% for blogger in collections.bloggers %}
+{% include "entry.njk" %}
+{% endfor %}
