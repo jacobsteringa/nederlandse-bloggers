@@ -3,10 +3,13 @@
     .entry {
         display: flex;
         justify-content: space-between;
+        margin: 0 0 .5rem;
+        border-bottom: 1px solid #ddd;
     }
 }
 {% endcss %}
 
 <div class="entry">
-    <span>{{ blogger.data.name }}</span> <a href="https://{{ blogger.data.homepage }}">{{ blogger.data.homepage }}</a>
+    <div>{{ blogger.data.name }}</div>
+    <div><a href="https://{{ blogger.data.homepage }}">{{ blogger.data.homepage }}</a></div>
 </div>

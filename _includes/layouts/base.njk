@@ -31,21 +31,51 @@ html {
 body { 
     font: 1rem/1.5 sans-serif;
     padding: 0 1rem;
-    margin: 4rem auto 3rem auto;
+    margin: 1rem auto 3rem auto;
     max-width: 80ch;
 }
 
 h1 {
-    margin-bottom: 0;
+    margin: 1rem 0 0;
 }
+
+/**p {
+    margin: 0 0 1.5rem;
+}*/
 
 .lead {
     margin-top: 0px;
     font-style: italic;
 }
+
+nav a:first-child {
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 1rem;
+    }
+
+    nav {
+        padding: 4rem 0 0;
+    }
+
+    nav a {
+        display: block;
+    }
+}
 {% endcss %}
     </head>
     <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/blog-toevoegen/">Blog toevoegen</a>
+            <a href="/over/">Over</a>
+        </nav>
+
         <main>
         {{ content | safe }}
         </main>
