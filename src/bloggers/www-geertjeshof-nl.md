@@ -1,5 +1,5 @@
 ---
 name: Geertje
-homepage: https://www.geertjeshof.nl/
+homepage: www.geertjeshof.nl
 feed: https://www.geertjeshof.nl/index.php/feed/
 ---

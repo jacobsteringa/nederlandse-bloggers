@@ -1,5 +1,5 @@
 ---
 name: Jan van den Berg
-homepage: janvanderberg.blog
-feed: https://janvanderberg.blog/feed/
+homepage: janvandenberg.blog
+feed: https://janvandenberg.blog/feed/
 ---
