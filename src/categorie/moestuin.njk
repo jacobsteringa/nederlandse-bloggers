@@ -1,0 +1,11 @@
+---
+title: Moestuin
+---
+
+<h1>Moestuin</h1>
+
+<p class="lead">Nederlandse bloggers die bloggen over moestuin.</p>
+
+{% for blogger in collections.bloggers | byCategory('moestuin') %}
+{% include "entry.njk" %}
+{% endfor %}

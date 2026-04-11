@@ -1,0 +1,11 @@
+---
+title: Fietsen
+---
+
+<h1>Fietsen</h1>
+
+<p class="lead">Nederlandse bloggers die bloggen over fietsen.</p>
+
+{% for blogger in collections.bloggers | byCategory('fietsen') %}
+{% include "entry.njk" %}
+{% endfor %}

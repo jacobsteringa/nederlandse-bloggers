@@ -1,5 +1,11 @@
 export default function(eleventyConfig) {
     eleventyConfig.addBundle('css');
+
+    eleventyConfig.addFilter('byCategory', function (arr, category) {
+        return arr.filter(entry => {
+            return entry.data.categories?.includes(category)
+        });
+    });
 }
 
 export const config = {

@@ -1,17 +1,39 @@
 {% css %}
 .entry {
-    margin: 0 0 .5rem;
     border-bottom: 1px solid #ddd;
+    margin: 0 0 1rem;
+    padding: 0 0 1rem;
 }
 @media (min-width: 576px) {
     .entry {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .entry > .link {
+        grid-colun: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .entry > .categories {
+        grid-column: 2 / 3;
+        grid-rows: 1 / 3;
+        text-align: end;
     }
 }
 {% endcss %}
 
 <div class="entry">
     <div>{{ blogger.data.name }}</div>
-    <div><a href="https://{{ blogger.data.homepage }}">{{ blogger.data.homepage }}</a></div>
+    <div class="link"><a href="https://{{ blogger.data.homepage }}">{{ blogger.data.homepage }}</a></div>
+    {% if blogger.data.categories | length > 0 %}
+    <div class="categories">
+    Categorie: 
+    {% for category in blogger.data.categories | default([]) %}
+    <a href="/categorie/{{ category }}">{{ category }}</a>{% if not loop.last %},{% endif %}
+    {% endfor %}
+    </div>
+    {% endif %}
 </div>
