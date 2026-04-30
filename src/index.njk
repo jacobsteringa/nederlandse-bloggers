@@ -7,6 +7,6 @@ layout: layouts/base.njk
 
 <p class="lead">Dit is een linkpagina of webportaal met links naar Nederlandse bloggers.</p>
 
-{% for blogger in collections.bloggers %}
+{% for blogger in collections.bloggers | reverse %}
 {% include "entry.njk" %}
 {% endfor %}
