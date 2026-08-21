@@ -1,10 +1,11 @@
 export default function(eleventyConfig) {
-    eleventyConfig.addBundle('css');
-
-    eleventyConfig.addFilter('byCategory', function (arr, category) {
-        return arr.filter(entry => {
-            return entry.data.categories?.includes(category)
-        });
+    eleventyConfig.addCollection('categories', function (api) {
+        return [...new Set(api
+            .getFilteredByTag('bloggers')
+            .map(blogger => blogger.data.categories)
+            .flat()
+            .filter(category => !! category)
+        )];
     });
 }
 
@@ -24,8 +25,6 @@ export const config = {
 
     dir: {
         input: "src",
-        includes: "../_includes",
-        data: "../_data",
         output: "_site",
     },
 };
